@@ -1,116 +1,108 @@
-schema: hugoblox/author/v1
-slug: me
+schema: "hugoblox/author/v1"
+slug: "me"
 is_owner: true
 name:
-  display: Dr. Alex Johnson
-  given: Alex
-  family: Johnson
-  alternate: ''  # Example: 王伟
-  pronunciation: ''  # Example: Wáng Wěi
-  pronouns: he/him
+  display: "Natanae Bolson"
+  given: "Natanael"
+  family: "Bolson"
+  # alternate: ""
+  # pronunciation: ""
+  # pronouns: "he/him"
 postnominals:
-  - PhD
-  - MIEEE
+  - "PhD"
 status:
-  icon: "☕️"
-role: Senior AI Research Scientist
-bio: |
-  Alex Johnson is a Senior AI Research Scientist at Meta AI. His research
-  has been published in top conferences like NeurIPS and ICML, with over
-  10,000 citations. Alex is passionate about pushing the boundaries of AI
-  while ensuring ethical development.
-
+  icon: "🧉"
+role: "MTC Manufacturing Futures Fellow"
+bio: "Dr Natanael Bolson is an MTC Manufacturing Futures Fellow at the University of Birmingham,
+ focusing on sustainable manufacturing, resource efficiency,
+  and industrial decarbonisation through innovative research and interdisciplinary collaboration.\n"
 affiliations:
-  - name: Meta AI
-    url: https://ai.meta.com/
-
+  - name: "University of Birmingham"
+    url: "https://www.birmingham.ac.uk/staff/profiles/mechanical/bolson-natanael"
 links:
-  - icon: at-symbol
-    url: mailto:alex.johnson@example.com
-    label: E-mail Me
-  - icon: brands/x
-    url: https://x.com/example
-  - icon: brands/github
-    url: https://github.com/example
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/in/example/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=example
-  - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
-
+  - icon: "at-symbol"
+    url: "mailto:n.o.faverobolson@bham.ac.uk"
+    label: "E-mail Me "
+  - icon: "brands/github"
+    url: "https://github.com/nof21"
+  - icon: "brands/linkedin"
+    url: "https://www.linkedin.com/in/natanaelbolson/"
+  - icon: "academicons/google-scholar"
+    url: "https://scholar.google.com/citations?user=AtXseAcAAAAJ"
+  - icon: "academicons/orcid"
+    url: "https://orcid.org/0000-0002-2375-2657"
 interests:
-  - Large Language Models
-  - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
-
+  - "Material and Energy Flow Analysis"
+  - "Energy Systems"
+  - "Industrial Decarbonisation"
+  - "Carbon Accounting"
 education:
-  - degree: PhD Computer Science
-    institution: Stanford University
-    start: 2015-09-01
-    end: 2019-06-30
-    summary: |
-      Thesis on scaling laws for neural language models. Published 5 papers in NeurIPS and ICML.
+  - degree: "PhD Energy Resources and Petroleum Engineering"
+    institution: "King Abdullah University of Science and Technology (KAUST)"
+    start: "2018-09"
+    end: "2021-12"
+    summary: "The Interdependence of Energy and Sustainability.\n"
     button:
-      text: Download dissertation
-      url: /resume.pdf
-      icon: hero/arrow-down-tray
-  - degree: MS Computer Science
-    institution: Carnegie Mellon University
-    start: 2013-09-01
-    end: 2015-05-31
-  - degree: BS Computer Science
-    institution: MIT
-    start: 2009-09-01
-    end: 2013-05-31
-
+      text: "Download dissertation"
+      url: "https://doi.org/10.25781/KAUST-UP099"
+      icon: "hero/arrow-down-tray"
+  - degree: "MS Mechanical Engineering"
+    institution: "King Abdullah University of Science and Technology (KAUST)"
+    start: "2016-09"
+    end: "2018-06"
+  - degree: "BS Renewable Energy Engineering"
+    institution: "Universidade Federal do Pampa (UNIPAMPA)"
+    start: "2010-03"
+    end: "2015-08"
 experience:
-  - role: Senior AI Research Scientist
-    org: Meta AI
-    start: 2020-01-01
-    summary: |
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
-    button:
-      text: View portfolio
-      url: /
-      icon: hero/arrow-down-tray
-  - role: AI Research Intern
-    org: OpenAI
-    start: 2019-06-01
-    end: 2019-12-31
-    summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
-
+  - role: "MTC Manufacturing Futures Fellow"
+    org: "University of Birmingham"
+    start: "2024-07"
+    summary: "Leading research on MEFA for industrial decarbonisation and manufacturing the energy transition.\n"
+  - role: "Research Associate"
+    org: "University of Cambridge"
+    start: "2022-01"
+    end: "2024-06"
+    summary: "Worked on mapping material and energy flows for the foudnation industries in the UK.\n"
 skills:
-  - name: Technical Skills
+  - name: "Technical Skills"
     items:
-      - label: Python
+      - label: "Python"
+        level: 3
+      - label: "Material Flow Analysis"
         level: 5
-      - label: Machine Learning
-        level: 5
-      - label: Cloud Computing
+      - label: "Life Cycle Assessment"
         level: 4
-  - name: Research & Communication
-    items:
-      - label: Academic Writing
-        level: 5
-      - label: Conference Presentations
-        level: 4
-      - label: Grant Proposals
+      - label: "Carbon Accounting"
         level: 4
 
+  - name: "Research & Communication"
+    items:
+      - label: "Academic Writing"
+        level: 5
+      - label: "Conference Presentations"
+        level: 4
 languages:
-  - name: English
+  - name: "Portuguese"
     level: 5
-    label: Native
-  - name: Spanish
+    label: "Native"
+  - name: "English"
     level: 4
-    label: Fluent
-
+    label: "Fluent"
+  - name: "Spanish"
+    level: 3
+    label: "Intermediate"
 awards:
-  - title: Best Paper Award
-    awarder: NeurIPS
-    date: "2022-12-01"
-    summary: Awarded for groundbreaking work on efficient training of large models.
-    icon: hero/trophy
+  - title: "2025 Net-Zero Industries Awards National Winner United Kingdom (Young Talent)"
+    awarder: "NIM - The Net-Zero Industries Mission"
+    date: "2025-11-15"
+    summary: "The awards were unveiled at COP30 in Belém, recognizing innovators in industrial decarbonisation."
+    icon: "hero/trophy"
+  - title: "KAUST Graduate Fellowship"
+    awarder: "King Abdullah University of Science and Technology (KAUST)"
+    date: "2016-05"
+    icon: "hero/trophy"
+  - title: "Academic Honours (outstanding academic performance)"
+    awarder: "Universidade Federal do Pampa (UNIPAMPA)"
+    date: "2015-08"
+    icon: "hero/trophy"

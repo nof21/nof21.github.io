@@ -1,0 +1,22 @@
+---
+title: Material circularity in the UK's foundation industries
+authors:
+- Natanael Bolson
+- Masoud Ahmadinia
+- Rossi Setchi
+- Sam Evans
+- Jonathan Cullen
+date: '2026-01-01'
+publishDate: '2026-03-05T10:00:49.374620Z'
+publication_types:
+- article-journal
+publication: '*Resources, Conservation and Recycling*'
+doi: 10.1016/j.resconrec.2025.108728
+abstract: This study evaluates how circular economy principles can reshape the use
+  of aluminium, lead, steel, glass, and paper in the UK's foundation industries. Circularity
+  strategies could reduce emissions by 42% and energy use by 17%, rising to 69% and
+  56% when combined with best-practice energy intensities.
+links:
+- name: URL
+  url: https://linkinghub.elsevier.com/retrieve/pii/S0921344925006056
+---
