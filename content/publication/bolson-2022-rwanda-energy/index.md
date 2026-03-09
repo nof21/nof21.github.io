@@ -12,4 +12,13 @@ doi: 10.3390/su14116440
 links:
 - name: URL
   url: https://www.mdpi.com/2071-1050/14/11/6440
+# Display this page in the Featured widget?
+featured: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+image:
+  caption: 'Power flows in Rwanda.'
+  focal_point: 'center'
+  # preview_only: false
 ---

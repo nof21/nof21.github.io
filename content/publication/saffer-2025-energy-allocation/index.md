@@ -13,4 +13,13 @@ doi: 10.1016/j.apenergy.2025.126388
 links:
 - name: URL
   url: https://linkinghub.elsevier.com/retrieve/pii/S0306261925011183
+# Display this page in the Featured widget?
+featured: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+image:
+  caption: 'Device efficiency and potential for improvement.'
+  focal_point: 'center'
+  # preview_only: false
 ---

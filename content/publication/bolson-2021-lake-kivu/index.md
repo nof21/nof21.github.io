@@ -14,4 +14,14 @@ doi: 10.1016/j.energy.2021.120215
 links:
 - name: URL
   url: https://linkinghub.elsevier.com/retrieve/pii/S0360544221004643
+
+# Display this page in the Featured widget?
+featured: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+image:
+  caption: 'Lake Kivu.'
+  focal_point: 'center'
+  # preview_only: false
 ---

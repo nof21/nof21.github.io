@@ -19,4 +19,14 @@ abstract: This study evaluates how circular economy principles can reshape the u
 links:
 - name: URL
   url: https://linkinghub.elsevier.com/retrieve/pii/S0921344925006056
+
+# Display this page in the Featured widget?
+featured: true
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+image:
+  caption: 'Material circularity in the UK'
+  focal_point: 'center'
+  # preview_only: false
 ---

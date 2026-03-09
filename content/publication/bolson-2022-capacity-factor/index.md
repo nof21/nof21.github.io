@@ -14,4 +14,13 @@ doi: 10.1073/pnas.2205429119
 links:
 - name: URL
   url: https://pnas.org/doi/10.1073/pnas.2205429119
+# Display this page in the Featured widget?
+featured: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+image:
+  caption: 'World mean capacity factors.'
+  focal_point: 'center'
+  # preview_only: false
 ---

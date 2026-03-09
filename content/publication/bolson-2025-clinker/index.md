@@ -19,4 +19,13 @@ doi: 10.1088/2634-4505/adf146
 links:
 - name: URL
   url: https://iopscience.iop.org/article/10.1088/2634-4505/adf146
+# Display this page in the Featured widget?
+featured: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+image:
+  caption: 'Best practices benchmark.'
+  focal_point: 'center'
+  # preview_only: false
 ---

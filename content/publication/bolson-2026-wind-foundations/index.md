@@ -21,4 +21,5 @@ image:
   caption: 'Offshore wind foundation types and their typical deployment depth ranges.'
   focal_point: 'center'
   # preview_only: false
+
 ---

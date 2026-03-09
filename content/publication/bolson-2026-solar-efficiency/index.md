@@ -18,4 +18,14 @@ abstract: This study analyses changes in crystalline silicon photovoltaic module
 links:
 - name: URL
   url: https://iopscience.iop.org/article/10.1088/2053-1591/ae4855
+
+# Display this page in the Featured widget?
+featured: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+image:
+  caption: 'Efficiency of solar panels.'
+  focal_point: 'center'
+  # preview_only: false
 ---

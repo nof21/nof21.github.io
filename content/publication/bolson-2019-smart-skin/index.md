@@ -14,4 +14,14 @@ doi: 10.1088/1361-665X/ab1c01
 links:
 - name: URL
   url: https://iopscience.iop.org/article/10.1088/1361-665X/ab1c01
+
+# Display this page in the Featured widget?
+featured: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+image:
+  caption: 'Schematic of the soft actuator.'
+  focal_point: 'center'
+  # preview_only: false
 ---
