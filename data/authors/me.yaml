@@ -2,7 +2,7 @@ schema: "hugoblox/author/v1"
 slug: "me"
 is_owner: true
 name:
-  display: "Natanae Bolson"
+  display: "Natanael Bolson"
   given: "Natanael"
   family: "Bolson"
   # alternate: ""
