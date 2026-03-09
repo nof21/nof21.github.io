@@ -15,7 +15,7 @@ abstract: This study quantifies uncertainty in process-based carbon accounting f
   at 1.37 kg CO2e per T-shirt with an uncertainty of ±13.81%. Fabric production contributes
   the largest share of emissions and uncertainty.
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
