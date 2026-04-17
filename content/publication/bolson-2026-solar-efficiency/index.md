@@ -4,7 +4,7 @@ title: Empirical evidence of improvements in material and carbon efficiency of c
 authors:
 - Natanael Favero Bolson
 - Haider Iqbal
-date: '2026-01-01'
+date: '2026-03-02'
 publishDate: '2026-03-05T10:00:49.391239Z'
 publication_types:
 - article-journal
