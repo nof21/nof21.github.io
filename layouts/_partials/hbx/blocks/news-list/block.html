@@ -1,0 +1,26 @@
+{{/* Latest news posts from content/news/, newest first. */}}
+{{ $block := .wcBlock }}
+{{ $c := $block.content }}
+{{ $items := where site.RegularPages "Section" "news" }}
+{{ $items = first ($c.count | default 5) $items.ByDate.Reverse }}
+{{ if $items }}
+<div class="nb-section">
+  <div class="nb-wrap">
+    <div class="nb-section-head">
+      <h2 class="nb-h2">{{ $c.title | default "News" }}</h2>
+      <a class="nb-more" href="{{ "news/" | relURL }}">All news</a>
+    </div>
+    <ul class="nb-news">
+      {{ range $items }}
+      <li>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time>
+        <div>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{ with .Params.summary }}<p>{{ . | markdownify }}</p>{{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

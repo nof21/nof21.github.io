@@ -1,0 +1,29 @@
+{{/*
+  Research themes. Each theme takes its colour from the matching band in the
+  hero flow diagram (themes 1-3 -> --nb-flow-1..3) and lists key papers by
+  publication folder name.
+*/}}
+{{ $block := .wcBlock }}
+{{ $c := $block.content }}
+<div class="nb-section">
+  <div class="nb-wrap">
+    {{ with $c.title }}<h2 class="nb-h2">{{ . }}</h2>{{ end }}
+    <div class="nb-themes">
+      {{ range $i, $t := $c.themes }}
+      <article class="nb-theme" id="{{ $t.id }}" style="--nb-theme-colour: var(--nb-flow-{{ add $i 1 }})">
+        <h3>{{ $t.name }}</h3>
+        <p>{{ $t.description | markdownify }}</p>
+        {{ with $t.papers }}
+        <ul class="nb-theme-papers" aria-label="Key papers">
+          {{ range . }}
+            {{ with site.GetPage (printf "/publication/%s" .) }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span>({{ replace (.Params.publication | default "") "*" "" }}, {{ .Date.Format "2006" }})</span></li>
+            {{ end }}
+          {{ end }}
+        </ul>
+        {{ end }}
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</div>

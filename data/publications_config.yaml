@@ -1,0 +1,30 @@
+# Settings for the weekly publication sync (scripts/update_publications.py).
+# Edit this file to control what the pipeline adds to the site.
+
+# Your ORCID iD. Works are matched by ORCID, so name variants
+# ("Bolson", "Favero Bolson") are handled automatically.
+orcid: "0000-0002-2375-2657"
+
+# Surnames used to highlight your name in author lists on the site.
+owner_names:
+  - "Bolson"
+
+# OpenAlex work types to include. Options include: article, review,
+# book-chapter, book, report, preprint, dataset, dissertation.
+include_types:
+  - article
+  - review
+  - book-chapter
+  - book
+
+# Ignore anything published before this year.
+min_year: 2015
+
+# A news post is created only for papers published within this many days.
+# Older papers found for the first time are added to the publication list
+# without a news post.
+news_window_days: 120
+
+# DOIs the pipeline should never add (e.g. conference abstracts, errata,
+# items you have rejected in a previous pull request).
+ignore_dois: []

@@ -1,0 +1,104 @@
+# Weekly publication sync
+#
+# Every Monday this workflow:
+#   1. Refreshes citation metrics (data/metrics.yaml, data/citations.yaml) and
+#      commits them straight to main, then redeploys the site.
+#   2. Looks for new publications linked to your ORCID iD. If it finds any, it
+#      opens (or updates) a pull request adding the publication pages and news
+#      posts, so you can review them before they go live.
+#
+# To publish new papers without review, add a repository variable
+# AUTO_PUBLISH = true (Settings > Secrets and variables > Actions > Variables).
+# Optional: add a variable OPENALEX_MAILTO with your email for faster OpenAlex access.
+#
+# Requires: Settings > Actions > General > Workflow permissions >
+#   "Allow GitHub Actions to create and approve pull requests" (ticked).
+
+name: Update publications
+
+on:
+  schedule:
+    - cron: '17 6 * * 1' # Mondays at 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: update-publications
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository_owner != 'HugoBlox'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Find new publications and refresh metrics
+        id: sync
+        env:
+          OPENALEX_MAILTO: ${{ vars.OPENALEX_MAILTO }}
+        run: python scripts/update_publications.py --report "$RUNNER_TEMP/report.md"
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit updated metrics
+        id: metrics
+        run: |
+          git add data/metrics.yaml data/citations.yaml
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore(metrics): weekly citation update"
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open pull request with new publications
+        if: steps.sync.outputs.changes != '0' && vars.AUTO_PUBLISH != 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/new-publications
+          base: main
+          title: 'Publication updates: ${{ steps.sync.outputs.new_count }} new paper(s)'
+          body-path: ${{ runner.temp }}/report.md
+          commit-message: 'feat(publications): add new publications and news'
+          add-paths: |
+            content/publication/**
+            content/news/**
+            publications.bib
+          labels: publications
+          delete-branch: true
+
+      - name: Publish new publications directly
+        id: direct
+        if: steps.sync.outputs.changes != '0' && vars.AUTO_PUBLISH == 'true'
+        run: |
+          git add content/publication content/news publications.bib
+          git commit -m "feat(publications): add new publications and news"
+          git push origin HEAD:main
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made with the workflow token do not trigger other workflows,
+      # so start the deploy workflow explicitly.
+      - name: Redeploy site
+        if: steps.metrics.outputs.changed == 'true' || steps.direct.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

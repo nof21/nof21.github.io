@@ -1,0 +1,54 @@
+{{/*
+  One publication entry.
+  Params: page (publication page), compact (bool: no thumbnail)
+  Highlights the site owner's name (data/publications_config.yaml: owner_names)
+  and shows the OpenAlex citation count from data/citations.yaml when available.
+*/}}
+{{- $p := .page -}}
+{{- $compact := .compact | default false -}}
+{{- $owners := site.Data.publications_config.owner_names | default (slice "Bolson") -}}
+{{- $doi := "" -}}
+{{- with $p.Params.hugoblox -}}{{- with .ids -}}{{- with .doi -}}{{- $doi = . -}}{{- end -}}{{- end -}}{{- end -}}
+{{- if not $doi -}}{{- with $p.Params.doi -}}{{- $doi = . -}}{{- end -}}{{- end -}}
+{{- $doi = lower (printf "%v" $doi) -}}
+{{- $cites := 0 -}}
+{{- with site.Data.citations -}}{{- with .counts -}}{{- with index . $doi -}}{{- $cites = . -}}{{- end -}}{{- end -}}{{- end -}}
+{{- $thumb := "" -}}
+{{- if not $compact -}}
+  {{- with $p.Resources.GetMatch "featured*" -}}
+    {{- if ne .MediaType.SubType "svg" -}}{{- $thumb = .Fill "400x250 Center webp q82" -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<li class="nb-pub{{ if or $compact (not $thumb) }} nb-pub--compact{{ end }}">
+  {{- with $thumb }}
+  <a class="nb-pub-thumb" href="{{ $p.RelPermalink }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy">
+  </a>
+  {{- end }}
+  <div>
+    <h3 class="nb-pub-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    {{- with $p.Params.authors }}
+    <p class="nb-pub-authors">
+      {{- $n := len . -}}
+      {{- range $i, $a := . -}}
+        {{- $isOwner := false -}}
+        {{- range $owners }}{{ if in (lower $a) (lower .) }}{{ $isOwner = true }}{{ end }}{{ end -}}
+        {{- if $isOwner }}<strong>{{ $a }}</strong>{{ else }}{{ $a }}{{ end -}}
+        {{- if lt (add $i 1) $n }}, {{ end -}}
+      {{- end -}}
+    </p>
+    {{- end }}
+    <p class="nb-pub-venue">
+      {{- with $p.Params.publication }}<em>{{ replace . "*" "" }}</em>, {{ end -}}
+      {{ $p.Date.Format "2006" }}
+    </p>
+    <ul class="nb-pub-links">
+      {{- with $doi }}<li><a href="https://doi.org/{{ . }}" rel="noopener">DOI</a></li>{{ end }}
+      {{- with $p.Params.url_pdf }}<li><a href="{{ . }}" rel="noopener">PDF</a></li>{{ end }}
+      {{- range $p.Params.links }}{{ if and .url (ne (lower (.name | default "")) "url") }}<li><a href="{{ .url }}" rel="noopener">{{ .name | default "Link" }}</a></li>{{ end }}{{ end }}
+      {{- with $p.Resources.GetMatch "cite.bib" }}<li><a href="{{ .RelPermalink }}" download>BibTeX</a></li>{{ end }}
+      {{- if gt $cites 0 }}<li class="nb-cites">Cited by {{ $cites }}</li>{{ end }}
+    </ul>
+  </div>
+</li>

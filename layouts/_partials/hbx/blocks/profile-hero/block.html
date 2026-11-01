@@ -1,0 +1,88 @@
+{{/*
+  Profile hero: name, role, research statement, profile links, citation metrics,
+  and a Sankey-style flow diagram whose three bands are the research themes.
+  Reads data/authors/me.yaml, data/metrics.yaml (written weekly by the pipeline)
+  and the block's own front matter in content/_index.md.
+*/}}
+{{ $block := .wcBlock }}
+{{ $c := $block.content }}
+{{ $me := index site.Data.authors ($c.username | default "me") }}
+{{ $avatar := resources.GetMatch (printf "media/authors/%s.*" ($c.username | default "me")) }}
+
+<header class="nb-hero" aria-labelledby="nb-name">
+  <div class="nb-wrap">
+    <div class="nb-hero-grid">
+      <div>
+        <h1 class="nb-name" id="nb-name">{{ $me.name.display }}</h1>
+        <p class="nb-role">
+          {{ $me.role }}
+          {{ with $c.department }}<span>{{ . }}</span>{{ end }}
+        </p>
+        {{ with $c.statement }}<p class="nb-statement">{{ . | markdownify }}</p>{{ end }}
+
+        <ul class="nb-profiles">
+          {{ range $me.links }}
+            {{ $label := .label | default "" }}
+            {{ if not $label }}
+              {{ $label = cond (in .icon "scholar") "Google Scholar" (cond (in .icon "orcid") "ORCID" (cond (in .icon "linkedin") "LinkedIn" (cond (in .icon "github") "GitHub" "Link"))) }}
+            {{ end }}
+            {{ if hasPrefix .url "mailto:" }}{{ $label = "Email" }}{{ end }}
+            <li>
+              <a href="{{ .url }}" {{ if not (hasPrefix .url "mailto:") }}rel="me noopener"{{ end }}>
+                {{ partial "functions/get_icon" (dict "name" .icon "attributes" "aria-hidden=\"true\"") }}
+                {{ $label }}
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+
+        {{ with site.Data.metrics }}
+          {{ if .citations }}
+          <p class="nb-metrics">
+            <strong>{{ .publications }}</strong> publications,
+            <strong>{{ lang.FormatNumber 0 .citations }}</strong> citations,
+            h-index <strong>{{ .h_index }}</strong>
+            (<a href="{{ .source_url }}" rel="noopener">{{ .source }}</a>, {{ (time .updated).Format "January 2006" }})
+          </p>
+          {{ end }}
+        {{ end }}
+
+        <div class="nb-actions">
+          {{ range $c.buttons }}
+            <a class="nb-btn{{ if .primary }} nb-btn--solid{{ end }}" href="{{ .url | relURL }}">
+              {{ with .icon }}{{ partial "functions/get_icon" (dict "name" . "attributes" "aria-hidden=\"true\"") }}{{ end }}
+              {{ .text }}
+            </a>
+          {{ end }}
+        </div>
+      </div>
+
+      {{ with $avatar }}
+        {{ $img := .Fill "520x650 Center webp q85" }}
+        <img class="nb-portrait" src="{{ $img.RelPermalink }}" width="260" height="325" alt="Portrait of {{ $me.name.display }}">
+      {{ end }}
+    </div>
+
+    {{ with $c.themes }}
+    <figure class="nb-flow" aria-label="Research themes">
+      <svg class="nb-reveal" viewBox="0 0 1200 240" role="group" aria-label="Research themes">
+        <g>
+          {{ $paths := slice
+            "M0,23 C235,23 235,80 470,80 L498,80 C644,80 644,29 790,29 L790,63 C644,63 644,114 498,114 L470,114 C235,114 235,57 0,57 Z"
+            "M0,115 C235,115 235,114 470,114 L498,114 C644,114 644,107 790,107 L790,133 C644,133 644,140 498,140 L470,140 C235,140 235,141 0,141 Z"
+            "M0,190 C235,190 235,140 470,140 L498,140 C644,140 644,184 790,184 L790,204 C644,204 644,160 498,160 L470,160 C235,160 235,210 0,210 Z" }}
+          {{ $ys := slice 46 120 194 }}
+          {{ range $i, $t := first 3 . }}
+            <a href="#{{ $t.id }}">
+              <text x="812" y="{{ index $ys $i }}" dominant-baseline="middle">{{ $t.name }}</text>
+            </a>
+            <path class="nb-band" style="fill: var(--nb-flow-{{ add $i 1 }})" d="{{ index $paths $i }}"/>
+          {{ end }}
+          <rect class="nb-node" x="470" y="74" width="28" height="92" rx="2"/>
+          {{ with $c.node_label }}<text class="nb-node-label" x="484" y="186" text-anchor="middle">{{ . }}</text>{{ end }}
+        </g>
+      </svg>
+    </figure>
+    {{ end }}
+  </div>
+</header>

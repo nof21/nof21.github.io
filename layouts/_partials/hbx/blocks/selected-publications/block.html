@@ -1,0 +1,16 @@
+{{/* Selected publications: pages with `featured: true`, newest first. */}}
+{{ $block := .wcBlock }}
+{{ $c := $block.content }}
+{{ $pubs := where (where site.RegularPages "Section" "publication") "Params.featured" true }}
+{{ $pubs = first ($c.count | default 6) $pubs.ByDate.Reverse }}
+<div class="nb-section">
+  <div class="nb-wrap">
+    <div class="nb-section-head">
+      <h2 class="nb-h2">{{ $c.title | default "Selected publications" }}</h2>
+      <a class="nb-more" href="{{ "publication/" | relURL }}">All publications</a>
+    </div>
+    <ul class="nb-pubs">
+      {{ range $pubs }}{{ partial "nb/pub-item.html" (dict "page" .) }}{{ end }}
+    </ul>
+  </div>
+</div>

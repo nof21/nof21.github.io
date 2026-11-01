@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="nb-page">
+  <div class="nb-wrap">
+    <h1 class="nb-page-title">{{ .Title | default "News" }}</h1>
+    {{ with .Content }}<div class="nb-page-intro">{{ . }}</div>{{ end }}
+    <ul class="nb-news" style="margin-top: 2.5rem">
+      {{ range .RegularPages.ByDate.Reverse }}
+      <li>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2006" }}</time>
+        <div>
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          {{ with .Params.summary }}<p>{{ . | markdownify }}</p>{{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

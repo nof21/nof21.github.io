@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ $pubs := .RegularPages.ByDate.Reverse }}
+<div class="nb-page">
+  <div class="nb-wrap">
+    <h1 class="nb-page-title">{{ .Title | default "Publications" }}</h1>
+    <p class="nb-page-intro">
+      {{ with .Content }}{{ . }}{{ else }}{{ len $pubs }} peer-reviewed publications, newest first.{{ end }}
+    </p>
+    {{ range $pubs.GroupByDate "2006" }}
+    <section class="nb-year" aria-labelledby="y{{ .Key }}">
+      <h2 id="y{{ .Key }}">{{ .Key }}</h2>
+      <ul class="nb-pubs">
+        {{ range .Pages }}{{ partial "nb/pub-item.html" (dict "page" . "compact" true) }}{{ end }}
+      </ul>
+    </section>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
