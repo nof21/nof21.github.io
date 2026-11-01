@@ -12,12 +12,12 @@ Personal academic website of Dr Natanael Bolson, built with [Hugo](https://gohug
    straight to `main` and the site is redeployed.
 2. **New publications.** Works linked to ORCID `0000-0002-2375-2657` are checked against
    `content/publication/`. Each new work gets a publication page and BibTeX file (metadata from
-   Crossref), and a news post if it was published in the last 120 days. If a free, legal copy exists
+   Crossref), and a news post announcing it. If a free, legal copy exists
    (open-access version or accepted manuscript, via OpenAlex), a PDF link is added, and existing
    papers get one too as soon as a free copy appears. These arrive as a pull request named
    "Publication updates" for you to review and merge.
 
-Settings (types to include, news window, DOIs to ignore) are in `data/publications_config.yaml`.
+Settings (types to include, news rules, DOIs to ignore) are in `data/publications_config.yaml`.
 
 ### One-off setup on GitHub
 

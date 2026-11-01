@@ -15,7 +15,7 @@ sections:
       username: me
       department: Department of Mechanical Engineering, University of Birmingham
       statement: >-
-        I study how manufacturing systems shape the energy transition, quantifying the
+        I research how manufacturing systems shape the energy transition, quantifying the
         materials, energy and emissions that flow through industrial processes and supply
         chains, and developing methods for resource-efficient, low-carbon industry.
       buttons:

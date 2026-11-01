@@ -20,10 +20,9 @@ include_types:
 # Ignore anything published before this year.
 min_year: 2015
 
-# A news post is created only for papers published within this many days.
-# Older papers found for the first time are added to the publication list
-# without a news post.
-news_window_days: 120
+# Every new publication gets a news post (0 = no age limit).
+# Set a number of days (e.g. 120) to create news posts only for recent papers.
+news_window_days: 0
 
 # DOIs the pipeline should never add (e.g. conference abstracts, errata,
 # items you have rejected in a previous pull request).

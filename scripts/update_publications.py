@@ -472,7 +472,7 @@ def main() -> int:
     orcid = cfg["orcid"]
     include_types = set(cfg.get("include_types", ["article", "review", "book-chapter", "book"]))
     min_year = int(cfg.get("min_year", 1900))
-    news_window = int(cfg.get("news_window_days", 120))
+    news_window = int(cfg.get("news_window_days") or 0)
     ignore = {norm_doi(d) for d in cfg.get("ignore_dois", []) or []}
     today = dt.date.today()
 
@@ -526,7 +526,7 @@ def main() -> int:
         seen_titles.add(key)
         slug = make_slug(rec["authors"], rec["date"].year, rec["title"], slugs)
         write_publication(rec, slug, args.dry_run)
-        recent = (today - rec["online_date"]).days <= news_window
+        recent = news_window <= 0 or (today - rec["online_date"]).days <= news_window
         if recent:
             write_news(rec, slug, cfg, args.dry_run)
         added.append((rec, slug, recent))
