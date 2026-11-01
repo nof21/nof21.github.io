@@ -1,0 +1,8 @@
+# Written by scripts/update_publications.py. Do not edit by hand.
+publications: 20
+citations: 172
+h_index: 6
+i10_index: 3
+source: OpenAlex
+source_url: https://openalex.org/A5024815350
+updated: '2026-11-01'
