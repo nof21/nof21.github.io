@@ -35,4 +35,5 @@ image:
   caption: 'Rates of heat and work generation.'
   focal_point: 'center'
   # preview_only: false
+url_pdf: 'https://www.mdpi.com/2071-1050/15/19/14440/pdf?version=1696309522'
 ---

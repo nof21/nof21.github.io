@@ -39,4 +39,5 @@ image:
   caption: 'Power flows in Rwanda.'
   focal_point: 'center'
   # preview_only: false
+url_pdf: 'https://www.mdpi.com/2071-1050/14/11/6440/pdf?version=1653460890'
 ---

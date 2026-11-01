@@ -38,4 +38,5 @@ image:
   caption: 'Schematic of the soft actuator.'
   focal_point: 'center'
   # preview_only: false
+url_pdf: 'https://iopscience.iop.org/article/10.1088/1361-665X/ab1c01/pdf'
 ---

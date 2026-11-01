@@ -35,4 +35,5 @@ image:
   caption: 'Contributions to total stage-level uncertainty by stage and process.'
   focal_point: 'center'
   # preview_only: false
+url_pdf: 'https://www.nature.com/articles/s41598-026-38773-4_reference.pdf'
 ---

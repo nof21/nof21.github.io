@@ -45,4 +45,5 @@ image:
   caption: 'Best practices benchmark.'
   focal_point: 'center'
   # preview_only: false
+url_pdf: 'https://iopscience.iop.org/article/10.1088/2634-4505/adf146/pdf'
 ---
