@@ -9,7 +9,9 @@ publishDate: '2026-03-05T10:00:49.398536Z'
 publication_types:
 - article-journal
 publication: '*Scientific Reports*'
-doi: 10.1038/s41598-026-38773-4
+hugoblox:
+  ids:
+    doi: 10.1038/s41598-026-38773-4
 abstract: The textile sector contributes significantly to global greenhouse gas emissions, yet product-level
   carbon accounting in this industry remains constrained by data gaps and methodological uncertainty.
   This study quantifies the uncertainty embedded in process-based carbon accounting for the cradle-

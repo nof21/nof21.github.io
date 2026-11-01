@@ -9,7 +9,9 @@ publishDate: '2026-03-05T10:00:49.432297Z'
 publication_types:
 - article-journal
 publication: '*Sustainability*'
-doi: 10.3390/su151914440
+hugoblox:
+  ids:
+    doi: 10.3390/su151914440
 abstract: Electriﬁcation scenarios dominate most plans to decarbonize the global economy and slow
   down the unfolding of climate change. In this work, we evaluate from a primary power perspective
   the impacts of electrifying the power, transport, residential and commercial sectors of the economy.

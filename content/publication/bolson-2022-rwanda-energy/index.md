@@ -8,7 +8,9 @@ publishDate: '2026-03-05T10:00:49.445846Z'
 publication_types:
 - article-journal
 publication: '*Sustainability*'
-doi: 10.3390/su14116440
+hugoblox:
+  ids:
+    doi: 10.3390/su14116440
 abstract: Energy ﬂows in a fertile environment drive societal development and progress. To develop
   a country sustainably, striking balance between environmental management, natural resource use,
   and energy generation is a must. However, developing a country with limited access to energy and

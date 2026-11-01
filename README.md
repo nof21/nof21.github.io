@@ -1,152 +1,74 @@
-# [The Academic CV That Gets You Hired](https://github.com/HugoBlox/hugo-theme-academic-cv)
+# nof21.github.io
 
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/academic-cv/start/?utm_source=github&utm_medium=readme)
+Personal academic website of Dr Natanael Bolson, built with [Hugo](https://gohugo.io) and the
+[Hugo Blox](https://hugoblox.com) kit, deployed to GitHub Pages on every push to `main`.
 
-<h1 align="center">The Portfolio That Works While You Sleep</h1>
+## How the site updates itself
 
-<p align="center">
-  <strong>Your unfair advantage in academia.</strong><br/>
-  Stop sending PDFs into the void. Build a living portfolio that boosts citations and lands offers.<br/>
-  Trusted by 250,000+ researchers at <strong>MIT, Stanford, and Google</strong>.
-</p>
+`.github/workflows/update-publications.yml` runs every Monday (and on demand from the Actions tab):
 
-<p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv/start?utm_source=github&utm_medium=readme"><b>🚀 Launch Free (60s)</b></a>
-  &nbsp;•&nbsp;
-  <a href="https://hugoblox.com/templates/?open=academic-cv&loading=true&utm_source=github&utm_medium=readme">Live Demo</a>
-  &nbsp;•&nbsp;
-  <a href="https://marketplace.visualstudio.com/items?itemName=ownable.ownable"><b>Visual Editor</b></a>
-</p>
+1. **Citation metrics.** Publication count, citations and h-index (from OpenAlex) are written to
+   `data/metrics.yaml`, and per-paper citation counts to `data/citations.yaml`. These are committed
+   straight to `main` and the site is redeployed.
+2. **New publications.** Works linked to ORCID `0000-0002-2375-2657` are checked against
+   `content/publication/`. Each new work gets a publication page and BibTeX file (metadata from
+   Crossref), and a news post if it was published in the last 120 days. If a free, legal copy exists
+   (open-access version or accepted manuscript, via OpenAlex), a PDF link is added, and existing
+   papers get one too as soon as a free copy appears. These arrive as a pull request named
+   "Publication updates" for you to review and merge.
 
-<p align="center">
-  <a href="https://discord.gg/z8wNYzb"><img src="https://img.shields.io/discord/722225264733716590?label=Join%20Discord&style=social" alt="Discord"></a>
-  <a href="https://github.com/HugoBlox/hugo-theme-academic-cv"><img src="https://img.shields.io/github/stars/HugoBlox/hugo-theme-academic-cv?label=Star%20Academic%20CV&style=social" alt="GitHub Stars"></a>
-</p>
+Settings (types to include, news window, DOIs to ignore) are in `data/publications_config.yaml`.
 
----
+### One-off setup on GitHub
 
-## Why This Template?
+- Settings > Actions > General > Workflow permissions: select **Read and write permissions** and tick
+  **Allow GitHub Actions to create and approve pull requests**.
+- Optional: Settings > Secrets and variables > Actions > Variables:
+  - `OPENALEX_MAILTO`: your email address, for faster OpenAlex access.
+  - `AUTO_PUBLISH` = `true`: publish new papers directly instead of opening a pull request.
 
-Most CVs are static PDFs that get lost in the pile. This is an **intelligent portfolio** that works 24/7 to advance your career.
+### When a pull request arrives
 
-- **🔮 Future-Proof:** Your content lives in simple **Markdown**. No database to break, no lock-in.
-- **🤖 AI-Ready:** Optimized for search engines and LLMs, so your work is found and cited.
-- **⚡ Zero Maintenance:** Auto-import citations from BibTeX and focus on research.
-- **✍️ Edit Visually:** Use **HugoBlox Studio** in VS Code — no coding needed. Full capabilities in Pro.
+- Check titles, authors and abstracts.
+- Add a `featured.jpg` (e.g. the graphical abstract) to the publication folder for a thumbnail.
+- Set `featured: true` in a paper's `index.md` to list it under "Selected publications".
+- Edit the wording of the news post in `content/news/<slug>/index.md` if you like.
+- To reject an item for good, add its DOI to `ignore_dois` in `data/publications_config.yaml`.
 
-<p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv/start?utm_source=github&utm_medium=readme">
-    <img src="https://img.shields.io/badge/⚡️%20Get%20Your%20CV%20in%2060s-ff4655?style=for-the-badge" 
-    alt="Deploy this template" width="400">
-  </a>
-</p>
+## Editing content by hand
 
-![HugoBlox Studio in Action](https://raw.githubusercontent.com/HugoBlox/kit/main/.github/media/studio/slide-1.webp)
-*HugoBlox Studio: Drag-and-drop page builder inside VS Code.*
+| What | Where |
+| --- | --- |
+| Name, role, bio, links, education, experience, awards | `data/authors/me.yaml` |
+| Homepage statement, research themes and their key papers | `content/_index.md` |
+| News posts | `content/news/<slug>/index.md` |
+| Publications | `content/publication/<slug>/index.md` + `cite.bib` |
+| CV PDF | `static/uploads/resume.pdf` |
+| Navigation | `config/_default/menus.yaml` |
 
-> "My citations went up 3x after switching to this template. The citation auto-sync feature is a lifesaver."
-> — **Dr. Zhang**, AI Research Scientist, Meta
+To add a news item (a talk, award or grant), copy any folder in `content/news/`, then change the
+title, date, summary and text.
 
----
+## Design
 
-## Who This Is For
+The custom homepage blocks are in `layouts/_partials/hbx/blocks/` (`profile-hero`,
+`research-themes`, `news-list`, `selected-publications`). The publication and news list pages are in
+`layouts/publication/list.html` and `layouts/news/list.html`, and the shared publication entry is in
+`layouts/_partials/nb/pub-item.html`. Colours, fonts and spacing are set in `assets/css/custom.css`.
+The three colours in the hero flow diagram match the three research themes.
 
-- Students and grads applying to top labs and industry roles
-- Researchers who want a living, citable portfolio
-- Faculty/PIs showcasing publications, talks, and group news
+Fonts: Source Serif 4 and IBM Plex Sans (SIL Open Font License, see `static/fonts/`), self-hosted.
 
----
-
-## Features
-
-| Feature | Benefit |
-| :--- | :--- |
-| **Markdown, Jupyter, RStudio** | Write in the tools you already use. |
-| **Auto-Update Citations** | Drop in a BibTeX file; formatted lists generated automatically. |
-| **Visual Editor** | Drag-and-drop blocks to build pages in minutes. |
-| **Global CDN** | Blazing fast load times (100/100 Lighthouse scores). |
-| **Privacy First** | You own your data. Host for free on GitHub Pages. |
-
----
-
-## Notebook → Posts and Slides
-
-- Publish your actual `.ipynb` as beautiful long-form posts — code, outputs, and narrative kept intact.
-- Slides in Markdown with Reveal.js: math, syntax highlight, diagrams, speaker notes.
-- Coming soon: **Notebook → Slides (beta)**. Request early access in Discord.
-
-Learn more: docs on [Notebooks](https://docs.hugoblox.com/reference/markdown/#-notebooks) and [Slides](https://docs.hugoblox.com/guides/slides/).
-
----
-
-## Why Go Plus (from $4/m)
-
-- Enhanced HugoBlox Studio visual editor — save 10–20 hours setting up and polishing
-- Make an unforgettable first impression
-- Priority support
-
----
-
-## Free vs Pro
-
-| Feature | Academic CV (Free) | Academic CV Pro & Resumé Pro |
-| --- | --- | --- |
-| Design | Professional & clean | Premium designs |
-| Layouts | Standard sections | Advanced timelines & layouts |
-| Courses/Lectures | Basic | Fully-Featured |
-| First Impression | Strong | Unforgettable |
-| Discord Support | Community | Priority |
-
-<p align="center">
-  <a href="https://hugoblox.com/pricing?utm_source=github&utm_medium=readme"><b>💎 Upgrade to Pro</b></a><br/>
-  <a href="https://hugoblox.com/templates/academic-cv-pro/start?utm_source=github&utm_medium=readme">✨ Deploy Academic CV Pro</a>
-  &nbsp;•&nbsp;
-  <a href="https://hugoblox.com/templates/resume-pro/start?utm_source=github&utm_medium=readme">📄 Deploy Resumé Pro</a>
-</p>
-
----
-
-## Get Started
-
-### Option 1: No-Code (Fastest)
-Launch a fully hosted site in your browser. No software to install.
-
-👉 [**Launch in Browser (Free)**](https://hugoblox.com/templates/academic-cv/start?utm_source=github&utm_medium=readme)
-
-### Option 2: Studio (Visual Editor)
-1) Install [HugoBlox Studio](https://marketplace.visualstudio.com/items?itemName=ownable.ownable) for VS Code  
-2) Open this project and edit visually
-
-### Option 3: CLI (Developers)
-1) Install [Hugo](https://docs.hugoblox.com/start/cli/)
-2) Create your site with the CLI:
+## Run locally
 
 ```bash
-npx hugoblox create site --template academic-cv
+pnpm install
+hugo server
 ```
 
----
+To test the publication sync without changing anything:
 
-## FAQ
-
-- Do I need to know Hugo? No — you can edit visually or write Markdown.
-- Can I host for free? Yes — GitHub Pages/Netlify are supported.
-- Can I export/migrate later? Yes — your site is just files.
-- Can I cancel Pro anytime? Yes.
-
----
-
-## Community & Support
-
-- 💬 [**Discord Community**](https://discord.gg/z8wNYzb)
-- 📚 [**Documentation**](https://docs.hugoblox.com/?utm_source=github&utm_medium=readme)
-- 🐦 [**Follow on X**](https://x.com/MakeOwnable)
-- ⭐ [**Star on GitHub**](https://github.com/HugoBlox/kit)
-
----
-
-MIT © 2016-Present [George Cushen](https://georgecushen.com)
-
-<!--START_SECTION:news-->
-<!--Updated at 2026-03-01T01:17:27.720Z-->
-<!--END_SECTION:news-->
+```bash
+pip install pyyaml
+python scripts/update_publications.py --dry-run
+```

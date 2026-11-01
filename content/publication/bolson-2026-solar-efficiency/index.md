@@ -9,7 +9,9 @@ publishDate: '2026-03-05T10:00:49.391239Z'
 publication_types:
 - article-journal
 publication: '*Materials Research Express*'
-doi: 10.1088/2053-1591/ae4855
+hugoblox:
+  ids:
+    doi: 10.1088/2053-1591/ae4855
 abstract: This study analyses changes in crystalline silicon photovoltaic module performance
   between 2008-2012 and 2020-2024 using specifications from 320 commercial products.
   The power-to-weight ratio increased from 10.5 W kg-1 to 19.1 W kg-1, while the power-to-area
@@ -20,7 +22,7 @@ links:
   url: https://iopscience.iop.org/article/10.1088/2053-1591/ae4855
 
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

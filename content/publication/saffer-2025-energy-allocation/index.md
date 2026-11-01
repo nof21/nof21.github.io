@@ -9,7 +9,9 @@ publishDate: '2026-03-05T10:00:49.405254Z'
 publication_types:
 - article-journal
 publication: '*Applied Energy*'
-doi: 10.1016/j.apenergy.2025.126388
+hugoblox:
+  ids:
+    doi: 10.1016/j.apenergy.2025.126388
 abstract: Reducing energy demand is one of the most cost-effective strategies for lowering carbon emissions and mitigating
   climate change. This study presents a novel methodology to allocate national energy use to specific industrial
   conversion devices, thus enhancing the precision of energy efficiency analyses. By conducting a comprehen-

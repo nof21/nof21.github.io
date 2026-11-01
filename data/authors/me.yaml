@@ -13,9 +13,7 @@ postnominals:
 status:
   icon: "🧉"
 role: "MTC Manufacturing Futures Fellow"
-bio: "Dr Natanael Bolson is an MTC Manufacturing Futures Fellow at the University of Birmingham,
- focusing on sustainable manufacturing, resource efficiency,
-  and industrial decarbonisation through innovative research and interdisciplinary collaboration.\n"
+bio: "Dr Natanael Bolson is an MTC Manufacturing Futures Fellow at the University of Birmingham. His research quantifies the materials, energy and emissions that flow through industrial processes and supply chains, to support resource-efficient, low-carbon manufacturing."
 affiliations:
   - name: "University of Birmingham"
     url: "https://www.birmingham.ac.uk/staff/profiles/mechanical/bolson-natanael"
@@ -63,7 +61,7 @@ experience:
     org: "University of Cambridge"
     start: "2022-01"
     end: "2024-06"
-    summary: "Worked on mapping material and energy flows for the foudnation industries in the UK.\n"
+    summary: "Worked on mapping material and energy flows for the foundation industries in the UK.\n"
 skills:
   - name: "Technical Skills"
     items:

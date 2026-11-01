@@ -10,7 +10,9 @@ publishDate: '2026-03-05T10:00:49.384275Z'
 publication_types:
 - article-journal
 publication: '*Journal of Cleaner Production*'
-doi: 10.1016/j.jclepro.2026.147836
+hugoblox:
+  ids:
+    doi: 10.1016/j.jclepro.2026.147836
 abstract: Offshore wind is central to global decarbonisation, yet the lifecycle impacts of turbine foundations remain
   insufficiently quantified. This study develops a systematic comparative framework to assess seven foundation
   types (i.e., monopile, jacket, tripod, gravity-based, semi-submersible, tension-leg platform, and spar) using

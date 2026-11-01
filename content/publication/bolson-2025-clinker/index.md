@@ -15,7 +15,9 @@ publishDate: '2026-03-05T10:00:49.425378Z'
 publication_types:
 - article-journal
 publication: '*Environmental Research: Infrastructure and Sustainability*'
-doi: 10.1088/2634-4505/adf146
+hugoblox:
+  ids:
+    doi: 10.1088/2634-4505/adf146
 abstract: Cement production is a major contributor to global emissions, representing 6% ofCO2
   energy-related emissions. The existing literature evaluates several interventions in production
   pathways to reduce energy consumption and carbon emissions. However, a knowledge gap exists

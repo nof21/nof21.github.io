@@ -10,7 +10,9 @@ publishDate: '2026-03-05T10:00:49.459174Z'
 publication_types:
 - article-journal
 publication: '*Energy*'
-doi: 10.1016/j.energy.2021.120215
+hugoblox:
+  ids:
+    doi: 10.1016/j.energy.2021.120215
 abstract:  Lake Kivu is a great environmental and economic resource in Rwanda. Its deep-water methane reservoir
   can help the country to narrow its energy supply gap. However, mishandling of the lake could lead to
   devastating consequences, from potable water contamination to limnic eruption. To evaluate the lake’s

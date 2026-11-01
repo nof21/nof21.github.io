@@ -1,120 +1,81 @@
 ---
-# Leave the homepage title empty to use the site title
+# Homepage. Blocks live in layouts/_partials/hbx/blocks/<block>/block.html
 title: ''
 summary: ''
 date: 2022-10-24
 type: landing
 
 design:
-  # Default section spacing
-  spacing: '6rem'
+  spacing: '0'
 
 sections:
-  - block: resume-biography-3
+  - block: profile-hero
+    id: about
     content:
-      # Choose a user profile to display (a folder name within `content/authors/`)
       username: me
-      text: ''
-      # Show a call-to-action button under your biography? (optional)
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
-      headings:
-        about: ''
-        education: ''
-        interests: ''
-    design:
-      # Use the new Gradient Mesh which automatically adapts to the selected theme colors
-      background:
-        gradient_mesh:
-          enable: true
+      department: Department of Mechanical Engineering, University of Birmingham
+      statement: >-
+        I study how manufacturing systems shape the energy transition, quantifying the
+        materials, energy and emissions that flow through industrial processes and supply
+        chains, and developing methods for resource-efficient, low-carbon industry.
+      buttons:
+        - text: Download CV
+          url: uploads/resume.pdf
+          icon: document-arrow-down
+          primary: true
+        - text: Get in touch
+          url: mailto:n.o.faverobolson@bham.ac.uk
+          icon: envelope
+      # The three flows in the hero diagram, top to bottom. Names link to the themes below.
+      node_label: Industry
+      themes:
+        - id: energy-transition
+          name: Manufacturing the energy transition
+        - id: decarbonisation
+          name: Industrial decarbonisation
+        - id: resource-efficiency
+          name: Resource efficiency and physical limits
 
-      # Name heading sizing to accommodate long or short names
-      name:
-        size: md # Options: xs, sm, md, lg (default), xl
-
-      # Avatar customization
-      avatar:
-        size: medium # Options: small (150px), medium (200px, default), large (320px), xl (400px), xxl (500px)
-        shape: circle # Options: circle (default), square, rounded
-  - block: markdown
+  - block: research-themes
+    id: research
     content:
-      title: '📚 My Research'
-      subtitle: ''
-      text: >-
-        <div class="text-justify">
-        <p>
-        My research explores how manufacturing systems shape the energy transition. I investigate the materials, industrial processes, and supply chains needed to build technologies such as wind turbines, solar panels, and other low-carbon infrastructure.
-        <p>
-        <p>
-        By combining engineering analysis, industrial ecology, and systems modelling, my work quantifies energy use, material demand, and carbon emissions across manufacturing networks. The goal is to develop methods that help design   resource-efficient, resilient, and sustainable manufacturing systems to support a rapid global transition to low-carbon energy. 
-        <p>
+      title: Research
+      themes:
+        - id: energy-transition
+          name: Manufacturing the energy transition
+          description: >-
+            The materials, processes and supply chains needed to build wind turbines, solar
+            panels and other low-carbon infrastructure, and how their material and carbon
+            intensity is changing.
+          papers:
+            - bolson-2026-wind-foundations
+            - bolson-2026-solar-efficiency
+        - id: decarbonisation
+          name: Industrial decarbonisation
+          description: >-
+            Process-level models of industrial energy use that show where electrification and
+            hydrogen can replace fossil fuels, and what that means for energy demand and emissions.
+          papers:
+            - bolson-2026-electrification
+            - saffer-2025-energy-allocation
+        - id: resource-efficiency
+          name: Resource efficiency and physical limits
+          description: >-
+            Material and energy flow analysis, circularity and thermodynamic benchmarks that
+            measure how far industrial processes are from their practical and theoretical limits.
+          papers:
+            - bolson-2026-circularity
+            - bolson-2025-thermo-minimum
 
-        <p>
-        Please reach out to collaborate 😃
-        <p>
-        </div>
+  - block: news-list
+    id: news
+    content:
+      title: News
+      count: 5
 
-        
-    design:
-      columns: '1'
-  - block: collection
+  - block: selected-publications
     id: papers
     content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      view: article-grid
-      columns: 2
-  - block: collection
-    content:
-      title: Recent Publications
-      text: ''
-      filters:
-        folders:
-          - publication
-        exclude_featured: false
-    design:
-      view: citation
-  # - block: collection
-  #   id: talks
-  #   content:
-  #     title: Recent News
-  #     filters:
-  #       folders:
-  #         - news
-  #   design:
-  #     view: card
-  # - block: collection
-  #   id: news
-  #   content:
-  #     title: Recent News
-  #     subtitle: ''
-  #     text: ''
-  #     # Page type to display. E.g. post, talk, publication...
-  #     page_type: blog
-  #     # Choose how many pages you would like to display (0 = all pages)
-  #     count: 10
-  #     # Filter on criteria
-  #     filters:
-  #       author: ''
-  #       category: ''
-  #       tag: ''
-  #       exclude_featured: false
-  #       exclude_future: false
-  #       exclude_past: false
-  #       publication_type: ''
-  #     # Choose how many pages you would like to offset by
-  #     offset: 0
-  #     # Page order: descending (desc) or ascending (asc) date.
-  #     order: desc
-    # design:
-    #   # Choose a layout view
-    #   view: card
-    #   # Reduce spacing
-    #   spacing:
-    #     padding: [0, 0, 0, 0]
+      title: Selected publications
+      count: 6
 ---

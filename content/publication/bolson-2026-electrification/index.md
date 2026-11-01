@@ -10,7 +10,9 @@ publishDate: '2026-03-05T10:00:49.374620Z'
 publication_types:
 - article-journal
 publication: '*Applied Energy*'
-doi: 10.1016/j.apenergy.2026.127760
+hugoblox:
+  ids:
+    doi: 10.1016/j.apenergy.2026.127760
 abstract: Decarbonising industrial energy systems requires a process-level understanding of where electrification and hydrogen can replace fossil fuels. However, national statistics typically report fuel use only at the sector level,
   which limits actionable planning. We develop a process-level energy allocation framework and apply it to the
   United Kingdom as a representative industrialised economy. Mapping energy use across devices, end uses, and

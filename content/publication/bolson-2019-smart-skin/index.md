@@ -10,7 +10,9 @@ publishDate: '2026-03-05T10:00:49.465870Z'
 publication_types:
 - article-journal
 publication: '*Smart Materials and Structures*'
-doi: 10.1088/1361-665X/ab1c01
+hugoblox:
+  ids:
+    doi: 10.1088/1361-665X/ab1c01
 abstract: Smart skins are integrating an increasing number of functionalities to improve the interactions
   between the equipped systems (robots or artiﬁcial systems) and their ambient environment. Here,
   we introduce a controllable texture as a new functionality, based on an innovative soft

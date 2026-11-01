@@ -11,7 +11,9 @@ publishDate: '2026-03-05T10:00:49.374620Z'
 publication_types:
 - article-journal
 publication: '*Resources, Conservation and Recycling*'
-doi: 10.1016/j.resconrec.2025.108728
+hugoblox:
+  ids:
+    doi: 10.1016/j.resconrec.2025.108728
 abstract: As the UK advances toward its 2050 net-zero target, moving beyond energy efficiency to comprehensive
   resource management is essential. This study evaluates how circular economy principles can reshape the use of
   aluminium, lead, steel, glass, and paper in the UK’s foundation industries. Using a circularity index, we assess

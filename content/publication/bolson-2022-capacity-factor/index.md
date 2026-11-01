@@ -10,7 +10,9 @@ publishDate: '2026-03-05T10:00:49.452492Z'
 publication_types:
 - article-journal
 publication: '*Proceedings of the National Academy of Sciences*'
-doi: 10.1073/pnas.2205429119
+hugoblox:
+  ids:
+    doi: 10.1073/pnas.2205429119
 abstract: Given the dire consequences of climate change and the war in Ukraine, decarbonization 
   of electrical power systems around the world must be accomplished, while avoiding
   recurring blackouts. A good understanding of performance and reliability of different
@@ -30,7 +32,7 @@ links:
 - name: URL
   url: https://pnas.org/doi/10.1073/pnas.2205429119
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

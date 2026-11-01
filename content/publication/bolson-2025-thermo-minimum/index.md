@@ -10,7 +10,9 @@ publishDate: '2026-03-05T10:00:49.411945Z'
 publication_types:
 - article-journal
 publication: '*Energy*'
-doi: 10.1016/j.energy.2025.135411
+hugoblox:
+  ids:
+    doi: 10.1016/j.energy.2025.135411
 abstract: The industrial sector consumes 38% of all energy produced and is responsible for 47% of global CO2 emissions,
   hence decarbonisation of industry is a priority for net-zero aspirations. Improving the energy efficiency of
   processes is key to the energy transition, and this requires benchmarking between current practices and
@@ -29,7 +31,7 @@ links:
   url: https://linkinghub.elsevier.com/retrieve/pii/S0360544225010539
 
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

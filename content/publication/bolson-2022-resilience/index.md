@@ -10,7 +10,9 @@ publishDate: '2026-03-05T10:00:49.439130Z'
 publication_types:
 - article-journal
 publication: '*Ecological Economics*'
-doi: 10.1016/j.ecolecon.2022.107383
+hugoblox:
+  ids:
+    doi: 10.1016/j.ecolecon.2022.107383
 abstract: Using an eight-dimensional indicator index, we evaluate the trajectories of resilience of 160 countries over 20
   years. Our highly-granular analysis of the current state of the world shows what must happen to control climate
   change and switch from quantitative to qualitative growth. Assessing the resilience of a country is a complex task

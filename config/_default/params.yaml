@@ -19,12 +19,12 @@ hugoblox:
     # Schema.org type for structured data
     type: person # person | organization | local_business
     # Short tagline displayed on your site
-    tagline: ""
+    tagline: "Manufacturing, materials and energy for industrial decarbonisation"
     # Site meta description for search engines and social sharing
-    description: "The highly-customizable Hugo Academic theme powered by HugoBlox Kit. Easily create your personal academic website."
+    description: "Dr Natanael Bolson, MTC Manufacturing Futures Fellow at the University of Birmingham. Research on material and energy flow analysis, industrial decarbonisation and manufacturing for the energy transition."
     # Social accounts (used for meta tags like Twitter Cards)
     social:
-      twitter: "MakeOwnable" # Twitter/X handle for Twitter Cards (without @)
+      twitter: "" # Twitter/X handle for Twitter Cards (without @)
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
@@ -34,10 +34,10 @@ hugoblox:
     # Mode: 'light', 'dark', or 'system' (follows OS preference)
     mode: light
     # Theme pack: name from data/themes/ or { light: "x", dark: "y" } for mix-and-match
-    pack: "solar"
+    pack: "minimal"
     # Optional: Override theme pack colors
     colors:
-      primary: "" # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
+      primary: "#24589b" # Tailwind palette name or hex (e.g., "indigo" or "#6366f1")
       secondary: ""
       neutral: "" # Affects gray utilities (text-gray-*, bg-gray-*)
     # Optional: Mode-specific color overrides
@@ -45,14 +45,14 @@ hugoblox:
     colors_dark: {}
     # Optional: Semantic surface color overrides
     surfaces:
-      background: ""
-      foreground: ""
+      background: "#ffffff"
+      foreground: "#2b3445"
       header:
-        background: ""
-        foreground: ""
+        background: "#ffffff"
+        foreground: "#14213d"
       footer:
-        background: ""
-        foreground: ""
+        background: "#f4f6f8"
+        foreground: "#5b6472"
 
   # ────────────────────────────────────────────────────────────────────────────
   # TYPOGRAPHY
@@ -87,12 +87,12 @@ hugoblox:
     # Stick to top on scroll
     sticky: true
     # Menu alignment
-    align: center # left | center | right
+    align: right # left | center | right
     # Feature toggles
-    search: true
-    theme_toggle: true
-    theme_picker: true
-    language_switcher: true
+    search: false
+    theme_toggle: false
+    theme_picker: false
+    language_switcher: false
     # Call-to-action button
     cta:
       enable: false
@@ -106,9 +106,9 @@ hugoblox:
   footer:
     # Footer style variant
     style: minimal # minimal | columns | centered
-    language_switcher: true
+    language_switcher: false
     # Custom footer text (HTML supported)
-    text: ""
+    text: "Department of Mechanical Engineering, University of Birmingham. Publications and citation metrics are updated weekly from ORCID and OpenAlex."
 
   # ────────────────────────────────────────────────────────────────────────────
   # COPYRIGHT
@@ -160,10 +160,10 @@ hugoblox:
       enable: false
     # Table of contents
     toc:
-      enable: true
+      enable: false
     # Reading time estimates
     reading_time:
-      enable: true
+      enable: false
     # Academic citations
     citations:
       style: apa # apa | mla | chicago | ieee
@@ -173,7 +173,7 @@ hugoblox:
   # Site search
   # ────────────────────────────────────────────────────────────────────────────
   search:
-    enable: true
+    enable: false
     # Trending/suggested search terms
     suggestions: []
     # Quick action shortcuts in search modal
