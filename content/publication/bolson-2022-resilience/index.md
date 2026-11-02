@@ -37,4 +37,5 @@ image:
   caption: 'Resilience octagon.'
   focal_point: 'center'
   # preview_only: false
+url_pdf: 'https://www.sciencedirect.com/science/article/pii/S0921800922000453/pdf'
 ---

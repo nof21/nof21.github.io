@@ -77,5 +77,5 @@ sections:
     id: papers
     content:
       title: Selected publications
-      count: 6
+      count: 8
 ---
