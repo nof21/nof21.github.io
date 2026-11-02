@@ -168,7 +168,11 @@ def open_access_links(oa: dict | None) -> tuple[str, str]:
     if not oa or not (oa.get("open_access") or {}).get("is_oa"):
         return "", ""
     loc = oa.get("best_oa_location") or {}
-    return (loc.get("pdf_url") or "").strip(), (loc.get("landing_page_url") or "").strip()
+    pdf = (loc.get("pdf_url") or "").strip()
+    # Some publisher records point at a reference-list or supplement PDF, not the article.
+    if re.search(r"(_reference|reference[-_]?list|supplement|_esm|mmc\d)\.pdf$", pdf, flags=re.I):
+        pdf = ""
+    return pdf, (loc.get("landing_page_url") or "").strip()
 
 
 def date_from_parts(obj: dict | None) -> dt.date | None:

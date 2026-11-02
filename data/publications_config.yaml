@@ -26,4 +26,5 @@ news_window_days: 0
 
 # DOIs the pipeline should never add (e.g. conference abstracts, errata,
 # items you have rejected in a previous pull request).
-ignore_dois: []
+ignore_dois:
+  - "10.25781/kaust-up099"  # PhD thesis (linked under Education)
